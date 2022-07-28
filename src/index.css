@@ -1,6 +1,12 @@
 /* Resetting defaults */
 
-body {
+body, div, h1, p{
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
+#root {
   margin: 0;
   padding: 0;
 }
@@ -17,11 +23,12 @@ body {
   display: flex;
   gap: var(--gap, 1rem);
   padding: 1.5em;
-  background-color: #152028;
+  background-color: #303444;
+  box-shadow: 0.5px 0.5px 2px 0.5px black;
 }
 
 .navbar--darkmode > .logo {
-  color: white;
+  color: rgb(151, 151, 151);
 }
 
 .nav-link {
@@ -32,7 +39,7 @@ body {
 }
 
 .nav-link--darkmode {
-  color: white;
+  color: rgb(151, 151, 151);
   text-decoration: inherit;
   font-family: 'Fira Mono', monospace;
   margin-right: 1em;
@@ -51,13 +58,89 @@ body {
 .primary-header {
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0;
+  position: relative;
 }
 
 .logo{
   display: inline;
+  margin-block: auto;
   margin: 0;
   padding: 0;
   font-family: 'Fira Mono', monospace;
   font-weight: 500;
   font-size: larger;
+}
+
+/* Defaults for Main Part of Pages */
+.page {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100vh;
+}
+
+.page--darkmode {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100vh;
+  background-color: #282434;
+}
+
+/* Homepage section */
+/* Circle and Picture for homepage */
+
+.content-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  gap: min(5vh, 5vw);
+  justify-content: center;
+}
+
+.circle {
+  top: 20%;
+  height: calc(20vh + 10vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px 2px rgb(155, 155, 155);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle--darkmode{
+  top: 20%;
+  height: calc(20vh + 10vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #282434;
+  box-shadow: 1px 1px 5px 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.logos {
+  width: calc(20vh + 10vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.logo-link {
+  aspect-ratio: 1;
+  height: calc(2.5vh + 2.5vw);
 }

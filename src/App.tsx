@@ -8,13 +8,14 @@ import ErrorPage from './Pages/ErrorPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const darkVal = localStorage.getItem("theme")
-  console.log(darkVal)
-  const [darkMode, setDarkMode] = React.useState<Boolean>(darkVal===null ? true : darkVal ==="true");
+  const darkVal = localStorage.getItem("theme");
+  const [darkMode, setDarkMode] = React.useState<Boolean>(darkVal===null ? true : darkVal === "true");
+
 
   function toggleDarkMode() {
+    localStorage.setItem("theme", (!darkMode).toString())
     setDarkMode(prevDarkMode => !prevDarkMode);
-    localStorage.setItem("theme", darkMode.toString())
+    console.log(darkMode)
   }
 
   return (
