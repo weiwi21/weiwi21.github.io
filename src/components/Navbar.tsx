@@ -13,7 +13,6 @@ export default function Navbar({darkMode, toggleDarkMode} : {darkMode:Boolean, t
             <nav>
                 <ul className="primary-navigation">
                     <li><Link to="/" className={`${linkMode}`}>Home</Link></li>
-                    <li><Link to="/about" className={`${linkMode}`}>About</Link></li>
                     <li><Link to="/projects" className={`${linkMode}`}>Projects</Link></li>
                     <li><button onClick={()=>toggleDarkMode()}></button></li>
                 </ul>

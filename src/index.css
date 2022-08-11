@@ -1,9 +1,10 @@
 /* Resetting defaults */
 
-body, div, h1, p{
+body, div, h1, h2, ul, p{
   margin: 0;
   padding: 0;
   overflow: scroll;
+  font-family: 'Fira Mono', monospace;
 }
 
 #root {
@@ -15,20 +16,18 @@ body, div, h1, p{
 
 .navbar {
   display: flex;
-  gap: var(--gap, 2rem);
-  padding: 1.5em;
+  padding: 1.5rem 10vh;
 }
 
 .navbar--darkmode {
   display: flex;
-  gap: var(--gap, 1rem);
-  padding: 1.5em;
-  background-color: #303444;
+  padding: 1.5rem 10vh;
+  background-color: #2d2b36;
   box-shadow: 0.5px 0.5px 2px 0.5px black;
 }
 
 .navbar--darkmode > .logo {
-  color: rgb(151, 151, 151);
+  color: #ACACAC;
 }
 
 .nav-link {
@@ -39,7 +38,7 @@ body, div, h1, p{
 }
 
 .nav-link--darkmode {
-  color: rgb(151, 151, 151);
+  color: #ACACAC;
   text-decoration: inherit;
   font-family: 'Fira Mono', monospace;
   margin-right: 1em;
@@ -89,7 +88,6 @@ body, div, h1, p{
 }
 
 /* Homepage section */
-/* Circle and Picture for homepage */
 
 .content-container {
   height: 100%;
@@ -101,6 +99,8 @@ body, div, h1, p{
   gap: min(5vh, 5vw);
   justify-content: center;
 }
+
+/* Circle and Picture for homepage */
 
 .circle {
   top: 20%;
@@ -132,8 +132,26 @@ body, div, h1, p{
   object-fit: contain;
 }
 
+/* Text for about section */
+.about-container {
+  margin-left: 10vh;
+  margin-right: 10vh
+}
+
+.about-text {
+  color: black;
+  line-height: 150%;
+}
+
+.about-text--darkmode {
+  color: rgb(151, 151, 151);
+}
+
+
+/* Logos under circle */
+
 .logos {
-  width: calc(20vh + 10vw);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,4 +161,90 @@ body, div, h1, p{
 .logo-link {
   aspect-ratio: 1;
   height: calc(2.5vh + 2.5vw);
+}
+
+/* Project card */
+
+.projectcard {
+  margin: 1vh;
+  max-width: 25rem;
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 2px rgb(155, 155, 155);
+}
+
+.projectcard--darkmode {
+  color: #ACACAC;
+  background-color: #302c3e;
+  margin: 1vh;
+  max-width: 25rem;
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 2px black;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.card-title--darkmode {
+  padding: 1vh 2vh;
+}
+
+.card-title {
+  padding: 1vh 2vh;
+}
+
+.card-desc--darkmode {
+  padding: 1vh 2vh;
+}
+
+.card-desc {
+  padding: 1vh 2vh;
+}
+
+.card-list--darkmode {
+  margin-bottom: 0.5rem;
+  padding: 1vh 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3vh;
+  row-gap: 1vh;
+  list-style: none;
+}
+
+.card-list {
+  margin-bottom: 0.5rem;
+  padding: 0.5vw;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3vh;
+  row-gap: 1vh;
+  list-style: none;
+}
+
+.card-list--darkmode > li {
+  border: 1px solid #ACACAC;
+  font-size: small;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.card-list > li {
+  border: 1px solid black;
+  font-size: small;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.cards {
+  width: 53rem;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(25rem, 1fr));
+  grid-template-rows: auto auto;
+  grid-auto-rows: 0px;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8rem;
 }
